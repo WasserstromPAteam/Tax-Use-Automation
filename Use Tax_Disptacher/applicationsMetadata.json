@@ -1,0 +1,18 @@
+﻿{
+  "Version": "1.0",
+  "Metadata": [
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "excel.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": {
+        "Value": "in_Config(\"ExcelTemplatePath\").ToString+\"\\\"+Str_CurrentMonthFile",
+        "IsExpression": true
+      },
+      "Version": null
+    }
+  ]
+}

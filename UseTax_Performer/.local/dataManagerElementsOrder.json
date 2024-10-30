@@ -1,0 +1,275 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SecretID&Sequence_55",
+        "TenantID&Sequence_55",
+        "CompressedOutput&Sequence_55",
+        "ConfidenceInterval&Sequence_35",
+        "TaxAmount&Sequence_35",
+        "CompressedOutput&Sequence_41",
+        "TenantID&Sequence_41",
+        "SecretID&Sequence_41",
+        "HumanValidatedResults&Sequence_35",
+        "DT_SE16N&StateMachine_1",
+        "QueueList&StateMachine_1",
+        "QueueList&TryCatch_10",
+        "ValidationList&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "HylandApp Workflows/Fill_Keywords_Search.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_NoDocumentPopup&Sequence_1",
+        "str_SearchReults&Sequence_1",
+        "Bool_SearchNextCase&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_Result",
+        "in_DocumentNo",
+        "in_Reference",
+        "in_Amount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "HylandApp Workflows/Select_AP-Invoices.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_DocRetrievalExist&Sequence_1",
+        "testt&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Reusable Workflows/Element_Exist.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Timer&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Out_Exist",
+        "in_FullSelector",
+        "in_UseForElementToDisappear",
+        "in_WaitUntill_Seconds"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "Out_DT_SE16N",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "in_DTFBL3N&Flowchart_1",
+        "SearchResult&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DTSE16N",
+        "io_ValidationList",
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "HylandApp Workflows/Download_Document.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_FileSaved&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_DocumentNumber",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Reusable Workflows/Enter_Details.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_DocumentNo",
+        "in_Reference",
+        "in_Amount",
+        "in_Case"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "DU Workflows/Document_Extraction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "FilePath&Sequence_1",
+        "pdfExists&Sequence_1",
+        "ExtractionResults&Sequence_1",
+        "ConfidenceInterval&Sequence_1",
+        "TaxAmount&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DocumentNumber",
+        "in_DTSE16N",
+        "Out_ValidationList",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "DU Workflows/Check Confidence interval.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ValidationTask&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_DocumentNumber",
+        "in_DTSE16N",
+        "Out_ValidationList",
+        "in_ExtractionResult",
+        "in_ConfidenceInterval",
+        "in_Taxamount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/UpdateRemarks.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Int_RowIndex&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_FileLocation",
+        "in_Dt_FBL3N",
+        "in_DocumentNumber",
+        "in_Remark"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "HylandApp Workflows/LaunchLogin_HylandUnityClient.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_HomepageExist&Sequence_1",
+        "Username&Sequence_2",
+        "Password&Sequence_2",
+        "bool_RetrievalExist&Sequence_2",
+        "bool_LoginPopupExist&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Zip.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "extract&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "HylandApp Workflows/Logout_HylandUnityClient.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ApplicationID&Sequence_4",
+        "SecretID&Sequence_4",
+        "TenantID&Sequence_4",
+        "CompressedOutput&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

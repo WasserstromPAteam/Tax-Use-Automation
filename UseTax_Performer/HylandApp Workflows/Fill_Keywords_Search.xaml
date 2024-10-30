@@ -1,0 +1,666 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Fill_Keywords_Search" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Result" Type="OutArgument(x:String)" />
+    <x:Property Name="in_DocumentNo" Type="InArgument(x:String)" />
+    <x:Property Name="in_Reference" Type="InArgument(x:String)" />
+    <x:Property Name="in_Amount" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,8386.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Fill_Keywords_Search_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="There is businnes logic to search the documents in the application. Firstly, search with the Docnumber, if not found search with costcentre, If not found and currency, if found download the doc. If multiple docs found update the same in the remarks&#xA;" DisplayName="Fill_Keywords_Search" sap:VirtualizedContainerService.HintSize="820,8322" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bool_NoDocumentPopup" />
+      <Variable x:TypeArguments="x:String" Name="str_SearchReults" />
+      <Variable x:TypeArguments="x:Boolean" Name="Bool_SearchNextCase" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: OnBase (Unity Client 64 (PROD))" sap:VirtualizedContainerService.HintSize="758,8172" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="724,7852" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Enter Details in Application" DisplayName="Enter_Details.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="662,178" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Reusable Workflows\Enter_Details.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_DocumentNo">[in_DocumentNo]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Reference">[in_Reference]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[in_Amount]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Case">1</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check for No Document Found Popup exist or not" DisplayName="Element_Exist.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="662,178" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Reusable Workflows\Element_Exist.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_Exist">[bool_NoDocumentPopup]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FullSelector">&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;ctrl automationid='messageTextblock' name='No documents found' /&gt;</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_UseForElementToDisappear">False</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_WaitUntill_Seconds">15</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <If sap2010:Annotation.AnnotationText="Check Documents found for Case1" Condition="[bool_NoDocumentPopup]" sap:VirtualizedContainerService.HintSize="662,1941.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,444.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Showing Document Not Found popup after Entering Document No &quot;+in_DocumentNo]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="38, 115, 125, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' role='push button' check:text='OK' /&gt;" Guid="dbf933dc-d3ba-47cb-834e-3e4fb15f550c" InformativeScreenshot="d30ab224bc6ccfbeea87bde75578bfdb.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="92, 123, 16, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' automationid='' check:text='OK' /&gt;" Guid="60998bfc-fd77-4fbb-a8ad-d87036ebaa47" SearchSteps="Selector, FuzzySelector, CV" />
+                            <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvTextArea="53, 63, 115, 12" CvTextArgument="No documents found" CvType="Text" DesignTimeRectangle="54, 62, 114, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='messageTextblock' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='messageTextblock' role='text' check:text='No documents found' /&gt;" Guid="44166532-333b-429a-8d9f-b37c16b14c48" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <Assign DisplayName="Assign Bool search value" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,1294" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'Search Results:'" sap:VirtualizedContainerService.HintSize="530,191.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" TextString="[str_SearchReults]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvTextArea="371, 150, 190, 15" CvType="AnyWordGroup" DesignTimeRectangle="372, 147, 1551, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl name='Search Results: 1 Document(s)' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl role='text' automationid='' /&gt;" Guid="39a847c1-3756-4228-b8e1-a40836fd735b" InformativeScreenshot="4d288e7017d100e5f75a7fd180a818b3.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvElementArea="348, 145, 21, 21" CvType="Icon" DesignTimeRectangle="351, 148, 16, 16" ElementType="Icon" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' role='graphic' /&gt;" Guid="b9d9dba9-9896-4405-b995-8c1cccda1c08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFgSURBVDhPY/jw/v1/amL6GDhr9lyCGJs+EMYwEKSYECDaQGTD8BlMlIHohlHNQJhhIPz999//BRue/Dfuu/nfbMLN/9OPvgarOX36DIZBMIzVhSDw9eff/3LNV//zVV0CG6bddf0/d8XF/6EL72MYgoxxGpi2+hHYsJuvfkBFgK4//gZs6KZTDzAMgmGcBqp3XPtvO+UWlIcAwjWX/kfMuohhEAzjNFCv+zrYq+hAEGhgysLLGAbBME4DO/e9/M8D9N7Ss++gIv//xy97+J+n8uL/c7efYRgEwzgNBAH3mXfAYSZWd/m/YPUlsAUgA10mnP9/6cFrDMNAGK+BILDzxqf/iSse/s9f/+T/nTc//3vPvgu2RATo9Yv3MA0laCA6uPz8+3/+ygs4DSXZQBA4cPnJfyGgYdgMRTGQWPz82fP/x2+9ghtasQGR2OEGkoNBhhatQ805FBmIDVPZwPf/AatOmGE6xQGRAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If sap2010:Annotation.AnnotationText="Check Multiple documents" Condition="[str_SearchReults.ToUpper.Contains(&quot;1 DOCUMENT&quot;)]" sap:VirtualizedContainerService.HintSize="530,1014.6666666666666" sap2010:WorkflowViewState.IdRef="If_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,492.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="434,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Document Found for Document No &quot;+in_DocumentNo]" />
+                        <Assign DisplayName="Assign result" sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Result]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Found</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="376,328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Multiple Documents Found for Entering Document No &quot;+in_DocumentNo]" />
+                        <Assign DisplayName="Assign 5" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If sap2010:Annotation.AnnotationText="Search case2" Condition="[Bool_SearchNextCase]" sap:VirtualizedContainerService.HintSize="662,2794.6666666666665" sap2010:WorkflowViewState.IdRef="If_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="628,2580" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Enter Details in Application" DisplayName="Reusable Workflows\Enter_Details.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Reusable Workflows\Enter_Details.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_DocumentNo">[in_DocumentNo]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Reference">[in_Reference]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[in_Amount]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_Case">2</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check for No Document Found Popup exist or not" DisplayName="Reusable Workflows\Element_Exist.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Reusable Workflows\Element_Exist.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_Exist">[bool_NoDocumentPopup]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FullSelector">&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;ctrl automationid='messageTextblock' name='No documents found' /&gt;</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_UseForElementToDisappear">False</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_WaitUntill_Seconds">15</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <If sap2010:Annotation.AnnotationText="Check Doument found for Case 2" Condition="[bool_NoDocumentPopup]" sap:VirtualizedContainerService.HintSize="586,2120.6666666666665" sap2010:WorkflowViewState.IdRef="If_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,559.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message 6" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Showing Document Not Found popup after Entering  Reference No &quot;+in_Reference]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="38, 115, 125, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' role='push button' check:text='OK' /&gt;" Guid="dbf933dc-d3ba-47cb-834e-3e4fb15f550c" InformativeScreenshot="d30ab224bc6ccfbeea87bde75578bfdb.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                  <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="92, 123, 16, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' automationid='' check:text='OK' /&gt;" Guid="60998bfc-fd77-4fbb-a8ad-d87036ebaa47" SearchSteps="Selector, FuzzySelector, CV" />
+                                  <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvTextArea="53, 63, 115, 12" CvTextArgument="No documents found" CvType="Text" DesignTimeRectangle="54, 62, 114, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='messageTextblock' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='messageTextblock' role='text' check:text='No documents found' /&gt;" Guid="44166532-333b-429a-8d9f-b37c16b14c48" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <Assign DisplayName="Assign BoolSearch" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="552,1346.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text 'Search Results:'" sap:VirtualizedContainerService.HintSize="510,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" TextString="[str_SearchReults]" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvTextArea="371, 150, 190, 15" CvType="AnyWordGroup" DesignTimeRectangle="372, 147, 1551, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl name='Search Results: 1 Document(s)' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl role='text' automationid='' /&gt;" Guid="39a847c1-3756-4228-b8e1-a40836fd735b" InformativeScreenshot="4d288e7017d100e5f75a7fd180a818b3.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvElementArea="348, 145, 21, 21" CvType="Icon" DesignTimeRectangle="351, 148, 16, 16" ElementType="Icon" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' role='graphic' /&gt;" Guid="b9d9dba9-9896-4405-b995-8c1cccda1c08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFgSURBVDhPY/jw/v1/amL6GDhr9lyCGJs+EMYwEKSYECDaQGTD8BlMlIHohlHNQJhhIPz999//BRue/Dfuu/nfbMLN/9OPvgarOX36DIZBMIzVhSDw9eff/3LNV//zVV0CG6bddf0/d8XF/6EL72MYgoxxGpi2+hHYsJuvfkBFgK4//gZs6KZTDzAMgmGcBqp3XPtvO+UWlIcAwjWX/kfMuohhEAzjNFCv+zrYq+hAEGhgysLLGAbBME4DO/e9/M8D9N7Ss++gIv//xy97+J+n8uL/c7efYRgEwzgNBAH3mXfAYSZWd/m/YPUlsAUgA10mnP9/6cFrDMNAGK+BILDzxqf/iSse/s9f/+T/nTc//3vPvgu2RATo9Yv3MA0laCA6uPz8+3/+ygs4DSXZQBA4cPnJfyGgYdgMRTGQWPz82fP/x2+9ghtasQGR2OEGkoNBhhatQ805FBmIDVPZwPf/AatOmGE6xQGRAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <If sap2010:Annotation.AnnotationText="Check if Multiple Documents" Condition="[str_SearchReults.ToUpper.Contains(&quot;1 DOCUMENT&quot;)]" sap:VirtualizedContainerService.HintSize="510,1060" sap2010:WorkflowViewState.IdRef="If_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,485.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message 6" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Document Found for Reference No &quot;+in_Reference]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[out_Result]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">Found</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,360" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message 7" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Multiple Documents Found for Entering Referencet No &quot;+in_Reference]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[Bool_SearchNextCase]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If sap2010:Annotation.AnnotationText="Search Case3" Condition="[Bool_SearchNextCase]" sap:VirtualizedContainerService.HintSize="662,2669.3333333333335" sap2010:WorkflowViewState.IdRef="If_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="628,2454.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Enter Details in Application" DisplayName="Reusable Workflows\Enter_Details.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Reusable Workflows\Enter_Details.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_DocumentNo">[in_DocumentNo]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Reference">[in_Reference]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Amount">[in_Amount]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_Case">3</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check for No Document Found Popup exist or not" DisplayName="Reusable Workflows\Element_Exist.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Reusable Workflows\Element_Exist.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_Exist">[bool_NoDocumentPopup]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FullSelector">&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;&lt;ctrl automationid='messageTextblock' name='No documents found' /&gt;</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_UseForElementToDisappear">False</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_WaitUntill_Seconds">15</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <If sap2010:Annotation.AnnotationText="Check Doument found for Case 3" Condition="[bool_NoDocumentPopup]" sap:VirtualizedContainerService.HintSize="586,1995.3333333333333" sap2010:WorkflowViewState.IdRef="If_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,559.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Showing Document Not Found popup after Entering  Reference No &amp; Amount &quot;+in_Reference+&quot; , &quot;+in_Amount]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="38, 115, 125, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' role='push button' check:text='OK' /&gt;" Guid="dbf933dc-d3ba-47cb-834e-3e4fb15f550c" InformativeScreenshot="d30ab224bc6ccfbeea87bde75578bfdb.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                  <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvElementArea="37, 115, 126, 32" CvTextArea="91, 124, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="92, 123, 16, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='okButton' /&gt;&lt;ctrl name='OK' role='text' automationid='' check:text='OK' /&gt;" Guid="60998bfc-fd77-4fbb-a8ad-d87036ebaa47" SearchSteps="Selector, FuzzySelector, CV" />
+                                  <uix:Target CVScreenId="2a43a4df-9d6d-4f32-a97c-40dd6e532933" CvTextArea="53, 63, 115, 12" CvTextArgument="No documents found" CvType="Text" DesignTimeRectangle="54, 62, 114, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='messageTextblock' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='messageTextblock' role='text' check:text='No documents found' /&gt;" Guid="44166532-333b-429a-8d9f-b37c16b14c48" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Result]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">File Not Found</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="552,1221.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get Text 'Search Results:'" sap:VirtualizedContainerService.HintSize="510,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="dd62a343-b958-49ee-b612-cd7e265e7012" TextString="[str_SearchReults]" Version="V3">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvTextArea="371, 150, 190, 15" CvType="AnyWordGroup" DesignTimeRectangle="372, 147, 1551, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl name='Search Results: 1 Document(s)' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl role='text' automationid='' /&gt;" Guid="39a847c1-3756-4228-b8e1-a40836fd735b" InformativeScreenshot="4d288e7017d100e5f75a7fd180a818b3.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="e7b7625f-cce6-4b3a-ad48-2a7d26edd0df" CvElementArea="348, 145, 21, 21" CvType="Icon" DesignTimeRectangle="351, 148, 16, 16" ElementType="Icon" FullSelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='resultsPart' /&gt;&lt;ctrl automationid='PART_HeaderImage' role='graphic' /&gt;" Guid="b9d9dba9-9896-4405-b995-8c1cccda1c08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFgSURBVDhPY/jw/v1/amL6GDhr9lyCGJs+EMYwEKSYECDaQGTD8BlMlIHohlHNQJhhIPz999//BRue/Dfuu/nfbMLN/9OPvgarOX36DIZBMIzVhSDw9eff/3LNV//zVV0CG6bddf0/d8XF/6EL72MYgoxxGpi2+hHYsJuvfkBFgK4//gZs6KZTDzAMgmGcBqp3XPtvO+UWlIcAwjWX/kfMuohhEAzjNFCv+zrYq+hAEGhgysLLGAbBME4DO/e9/M8D9N7Ss++gIv//xy97+J+n8uL/c7efYRgEwzgNBAH3mXfAYSZWd/m/YPUlsAUgA10mnP9/6cFrDMNAGK+BILDzxqf/iSse/s9f/+T/nTc//3vPvgu2RATo9Yv3MA0laCA6uPz8+3/+ygs4DSXZQBA4cPnJfyGgYdgMRTGQWPz82fP/x2+9ghtasQGR2OEGkoNBhhatQ805FBmIDVPZwPf/AatOmGE6xQGRAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <If sap2010:Annotation.AnnotationText="Check if Multiple Documents" Condition="[str_SearchReults.ToUpper.Contains(&quot;1 DOCUMENT&quot;)]" sap:VirtualizedContainerService.HintSize="510,934.6666666666666" sap2010:WorkflowViewState.IdRef="If_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,360" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Document Found for Reference No &amp; Anount &quot;+in_Reference+&quot; , &quot;+in_Amount]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[out_Result]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">Found</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,360" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Multiple Documents Found for Entering Referencet No &amp; Amount &quot;+in_Reference+&quot;, &quot;+in_Amount]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[out_Result]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">Multiple Invoices</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" FilePath="[in_Config(&quot;HylandUnity_Location&quot;).ToString]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWESURBVFhHrVd9TJVlFKfVbDZbm23NVrOtvxptrVarrWxrrP/s0zQqI0lNpmkYpogIxNJQUrSQi4BG8l0IopIaCvGRV9SrJhPRLmLAReAKXK583Q8up/M797kv99pVvvyxH+/znnOec85zzvM+730DJgIimsVcxkxjljENihhDBt0sZX7vwE5DmHrmeAHbEDV98mAnwcxKeAQG7Q4q0J+niOwDFJqaSy9G/SAMScmm8H1FVFh7QWy8gLnByt3EwBO3iwtGU2cXLcsooEcWR1LAR1/dlbCBbbvFqmYLtiu3Y4ONpzF1mOV0OamkuZhaunpoRuhavwH98fnIrWS1WanadJwcLjtcAfA5TYW5M5QhWR29FHNuA31Q/g4dMx2hhJLj4vyJFTHSgrQTJ6ms7gqVX7oq4/X5h0QHm8rLRqpoPUopF7dSTkM69Tm0auhUGP9gg0RYWew9FHZyiQQHl9Qs4hX1S8CxYGhqoZ6hLtLVJUoCYGb9LuplnwqJKpwvWBEErWvEpa3cw5zGfVBNCLXt1VoCYO6VDO92BKmwo2BhITQI5h28uqMK4knhH0u9TxJVJhwXgkIV1g0WyOpb+1toQcV7U1r57TjVXqUlgLZ0DZmVxqsKfCOrL2jKpQ2GdUJdQzKNjIxAPCWM8N+fvCGLjDnC0x01SqOqwIPpuIOhbXhII/bCvQJ8OVwOjV6YjgTmusdEwy4X6a82UfGZi2Tq7lVSX+Ck21Ohl0evst6opJPGXCSwCSO7c5jeiP+RHvsiip5bm0APL/qGahquQeWDuuY2ui94FS1I2ktPLt9IC3+a0j7ZhASyMMqsrKUHPg6XYxd4NzGdXojcIgcNqrK9tIIOGurIcK1FEkAiqMRTX8ZK5VCR+P1HRQ9gzsaCwyIHUK3EQyfEnxeykEApRqt+LpSVe5B8rEoCzduWIdXA9cGFq2n1L0U+FUBiSGDFnl8pLD1fbHL/OivXNVnFFPfb73T078v06JJIWpdTIhUuPX9JRaFSJHAQIzj2TkBXViMVQSBUA3glehu9tWW3JADHCAjHqNqm4j9EhwAIhKRfj9shVfpsVxY9vepbsX/m6+9o6e488cc4iAQyMYIhsvZsPgRGQuixp89w6EkALejuG5AxZGiFsd0sbUsoKSOztU9aAv1LUYn07JrN0o7bNm8mEliPETbhqzFJ9HhYtAR+KCSCz/6GOyaAK1aFNuB3AJL/XJcj87FCtMxTEZQcFcE95KeN/4o/RjQSmOMeu5NAUPSw+ab75YHNBALQYbJnJQX6c9Q7MCi6C9dNIsPcK22dcsXGRpUAVBb38OGRMeZ4DqNm3Ln44PNw6mfgKODLyf88VGiW4ADfJENS3WOnvaYBYVHHkLfxpOFgH6HX++m1hlvC728MKQ0lq/CSQCAk3Q4XxTfeojjFQ2bNeNJY2TxAAWd7hPcbesho0474QBXeDRbIb8DybpuWAKi3aO/wCUNntmnBwYgW935h/P83IgtnQzPMJUtvHfBJ4kDnkMjHCzvbeq8cfPnyLZErzFZhfcGKcGj7OZqupV9LILW1nyyDFqpuOMFPig0mfgHdmcaTZLK7aMY5ixY88JKVzKMbKlyF8w82kOPQzo9C9o1BScA44KS08p00LymIPk15m3Yc2Uz7a3P4kTosLD6TJzLoYINEY9sGJfj7jX3Uh8fKjQQV5u5gw1i3Pb/9+hzUZDbS/B1vivPxcGn6h3TTNkg7O3yqFavcjw88Ybl7HvFHholSjyfRJ8lz/Qb05uK0+ZRdk0FWbpkXliu3EwNPnMnU3lDOYaf0OF+fKQlF5a+kyLwVMobM0HRKWWrA3JnK3eTBTvBVHM+sY44F2MD23n8lA+wYj2soE5/i+IoCMYbM/+N1RwQE/AcLFshont+wsgAAAABJRU5ErkJggg==" InformativeScreenshot="1686a0dbe83136f48bfcd7cabf87c295.png" Selector="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase*' /&gt;" Title="OnBase (Unity Client 64 (PROD))" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

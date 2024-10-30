@@ -1,0 +1,336 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Select_AP_Invoices" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1102,1793.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Select_AP_Invoices_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select_AP_Invoices" sap:VirtualizedContainerService.HintSize="1112,1728.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bool_DocRetrievalExist" />
+      <Variable x:TypeArguments="x:Boolean" Name="testt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="1050,1618" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1320.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Retrieval Button&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Retrieval'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="a9189b17-b25a-41fc-bfb8-ba3f4cb3236b" CvElementArea="242, 58, 35, 33" CvType="Icon" DesignTimeRectangle="244, 60, 32, 32" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;&lt;ctrl automationid='image' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;&lt;ctrl automationid='image' role='graphic' /&gt;" Guid="c87d54c1-24cc-4282-ba89-24b3e2d85ac8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK2SURBVFhH7ZZLaBNBGIC9+wIRURRUPAgqiIggCL0peiqiR8WLiFfxVcVHWy2i2IpVQT20Iqj4Ah9BkB5sbQ8+itAmpkmbps2aNjXRNmka02xifvefzm42md1kd3YTKvSDIctMZubbefz/zoNZxpxQKf5PIf+vFDR3huHQkwDsvj8I+x4MwbHXQXjXF4NUJkv/ZQ9FhUKTIhx+KsDCMz0wv0a7bLjaBy97JmgP6+gKfQv+gTWXv2tKaJUTb0Yg89f6amkKBaMirFXJLD3vJFvUMRgHYUIEz89peNg9DlW3B/KkTjtG6Aj8aArtkc6JPMnm6x4YiEzTlnyy0oI0todhAd1S/EVpKzBCH3xxRWZVvQuGxlO0RZ+69yGlz867PlrLByN09LmgDI43ywiidNPWX3Er/YYNvIQejNCWRo8y8GhMpLWlOS4darnfCwu3jhFaftFFBl1Z56I1xmj98lsRutUZobXmYYRQBAddUWtOqEUldKfLRqFtN7zKwHjFjXLybW7LXjmjtNY8jBAGOHlgvNJGSKazsK5h5lBjVDdz9gphhD4FEooQnqf+sHYMUnNKtTrVLX5aywcjhOyXkqc8AeYqZyhJW/LBVFGrikGLzvZC948EbeVDUygylYaNkog80WJpoiPPBHC4Y+AeS8JnaRXx4G5typ03LDua+y3nM00hBNPFpms5qWIFU8ayC07yfODRMHmhGsco16eJrhASTWZIUl1yrpeRkAuuUpt3kmzr6kszCVmW29vqNy1VVEgmHE+TwIfR+ODjANm+hrYx6PJPkQQr81FKrGpZHilDQkZRfyXwStkq9FVIkAhvRcpWIcSqlO1CiBWpsgghvFJlE0J4pMoqhBSTwi+EQsouhGhJbb/pJRG9kIoIIWopPRmkYkIISu2659OVQSoqZIQ5oVLMMiGAfzIi398tUDIFAAAAAElFTkSuQmCC" InformativeScreenshot="ffb96527dfaea9ba17ce8f7eae54bb26.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="a9189b17-b25a-41fc-bfb8-ba3f4cb3236b" CvTextArea="237, 95, 46, 12" CvTextArgument="Retrieval" CvType="Text" DesignTimeRectangle="232, 57, 57, 66" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' role='push button' check:text='Retrieval' /&gt;" Guid="6313125c-3fc0-4578-adad-f535432f3f4e" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Document Retrieval'" sap:VirtualizedContainerService.HintSize="954,54" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Timeout="30" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1038" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigated to Document Retrieval page&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting &lt;ALL&gt; option under Document Types and Groups&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Document Types'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="8dceb98d-3ca3-41ad-ab43-bfaabb028e91" CvElementArea="31, 315, 454, 36" CvType="InputBox" DesignTimeRectangle="34, 317, 450, 33" DesignTimeScaleFactor="1.5" ElementType="DropDown" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' role='combo box' /&gt;" Guid="9d8e4882-4f6e-4a76-968e-2ab0afa5b33d" InformativeScreenshot="8df4e913f6dee829e7fef70c67fbd105.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="8dceb98d-3ca3-41ad-ab43-bfaabb028e91" CvTextArea="58, 285, 279, 24" CvTextArgument="Document Types and Groups" CvType="Text" DesignTimeRectangle="59, 280, 393, 30" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' automationid='' check:text='Document Types and Groups' /&gt;" Guid="ca9cef9a-fd0f-4a10-a7c7-220d164b5b74" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NSelectItem DisplayName="Select Item 'Document Types'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="&lt;All&gt;" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="2">
+                        <x:String>&lt;All&gt;</x:String>
+                        <x:String>Accounts Payable</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="26, 208, 30, 12" CvTextArgument="&lt;Al&gt;&gt;" CvType="Text" DesignTimeRectangle="34, 317, 450, 33" DesignTimeScaleFactor="1.5" ElementType="DropDown" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' role='combo box' /&gt;" Guid="b2188f54-c757-4367-9aa9-82d643f3e9db" InformativeScreenshot="cbfbe43060956fcf99dec97133e611c9.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="39, 182, 181, 16" CvTextArgument="Document Types and Groups" CvType="Text" DesignTimeRectangle="59, 280, 393, 30" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' automationid='' check:text='Document Types and Groups' /&gt;" Guid="a4dabbb4-2c40-4c84-a9a5-ea5de3782106" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'AP - Invoices'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="8dceb98d-3ca3-41ad-ab43-bfaabb028e91" CvTextArea="67, 363, 107, 16" CvTextArgument="AP - Invoices" CvType="Text" DesignTimeRectangle="71, 359, 103, 25" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' /&gt;&lt;ctrl name='AP - Invoices' role='list item' /&gt;&lt;ctrl name='AP - Invoices' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' /&gt;&lt;ctrl name='AP - Invoices' role='list item' /&gt;&lt;ctrl name='AP - Invoices' role='text' automationid='' check:text='AP - Invoices' /&gt;" Guid="49f11851-e9f2-4118-933f-cb7f9eaaef74" InformativeScreenshot="20d2f7631620c8912317e48367bcd7be.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="8dceb98d-3ca3-41ad-ab43-bfaabb028e91" CvTextArea="67, 363, 107, 16" CvTextArgument="AP - Invoices" CvType="Text" DesignTimeRectangle="35, 356, 452, 31" ElementType="ListItem" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' /&gt;&lt;ctrl name='AP - Invoices' role='list item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' /&gt;&lt;ctrl name='AP - Invoices' role='list item' automationid='' check:text='AP - Invoices' /&gt;" Guid="b28fec04-6267-4910-aab5-43b6c44aefab" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,691" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Retrieval'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="a9189b17-b25a-41fc-bfb8-ba3f4cb3236b" CvElementArea="242, 58, 35, 33" CvType="Icon" DesignTimeRectangle="244, 60, 32, 32" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;&lt;ctrl automationid='image' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;&lt;ctrl automationid='image' role='graphic' /&gt;" Guid="c87d54c1-24cc-4282-ba89-24b3e2d85ac8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK2SURBVFhH7ZZLaBNBGIC9+wIRURRUPAgqiIggCL0peiqiR8WLiFfxVcVHWy2i2IpVQT20Iqj4Ah9BkB5sbQ8+itAmpkmbps2aNjXRNmka02xifvefzm42md1kd3YTKvSDIctMZubbefz/zoNZxpxQKf5PIf+vFDR3huHQkwDsvj8I+x4MwbHXQXjXF4NUJkv/ZQ9FhUKTIhx+KsDCMz0wv0a7bLjaBy97JmgP6+gKfQv+gTWXv2tKaJUTb0Yg89f6amkKBaMirFXJLD3vJFvUMRgHYUIEz89peNg9DlW3B/KkTjtG6Aj8aArtkc6JPMnm6x4YiEzTlnyy0oI0todhAd1S/EVpKzBCH3xxRWZVvQuGxlO0RZ+69yGlz867PlrLByN09LmgDI43ywiidNPWX3Er/YYNvIQejNCWRo8y8GhMpLWlOS4darnfCwu3jhFaftFFBl1Z56I1xmj98lsRutUZobXmYYRQBAddUWtOqEUldKfLRqFtN7zKwHjFjXLybW7LXjmjtNY8jBAGOHlgvNJGSKazsK5h5lBjVDdz9gphhD4FEooQnqf+sHYMUnNKtTrVLX5aywcjhOyXkqc8AeYqZyhJW/LBVFGrikGLzvZC948EbeVDUygylYaNkog80WJpoiPPBHC4Y+AeS8JnaRXx4G5typ03LDua+y3nM00hBNPFpms5qWIFU8ayC07yfODRMHmhGsco16eJrhASTWZIUl1yrpeRkAuuUpt3kmzr6kszCVmW29vqNy1VVEgmHE+TwIfR+ODjANm+hrYx6PJPkQQr81FKrGpZHilDQkZRfyXwStkq9FVIkAhvRcpWIcSqlO1CiBWpsgghvFJlE0J4pMoqhBSTwi+EQsouhGhJbb/pJRG9kIoIIWopPRmkYkIISu2659OVQSoqZIQ5oVLMMiGAfzIi398tUDIFAAAAAElFTkSuQmCC" InformativeScreenshot="ffb96527dfaea9ba17ce8f7eae54bb26.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="a9189b17-b25a-41fc-bfb8-ba3f4cb3236b" CvTextArea="237, 95, 46, 12" CvTextArgument="Retrieval" CvType="Text" DesignTimeRectangle="232, 57, 57, 66" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='canvasRibbonToolbar' /&gt;&lt;ctrl automationid='HomeRibbon' /&gt;&lt;ctrl automationid='documentsRibbonGroup' /&gt;&lt;ctrl automationid='retrievalButtonTool' role='push button' check:text='Retrieval' /&gt;" Guid="6044e7f5-ff97-405a-9969-1c81a9b28e76" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Document Retrieval'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[bool_DocRetrievalExist]" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="33, 150, 125, 13" CvTextArgument="Document Retrieval" CvType="Text" DesignTimeRectangle="34, 147, 299, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl name='Document Retrieval' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl name='Document Retrieval' role='text' automationid='' check:text='Document Retrieval' /&gt;" Guid="03effd4c-f9fd-497e-82be-a97f4c0a6c88" InformativeScreenshot="296cb96f6893d02b02ca1cd60035fad1.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                  <If Condition="[bool_DocRetrievalExist]" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,611" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigated to Document Retrieval page after retry&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting &lt;ALL&gt; option under Document Types and Groups&quot;]" />
+                        <uix:NSelectItem DisplayName="Select Item 'Document Types'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="&lt;All&gt;" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+                          <uix:NSelectItem.Items>
+                            <scg:List x:TypeArguments="x:String" Capacity="2">
+                              <x:String>&lt;All&gt;</x:String>
+                              <x:String>Accounts Payable</x:String>
+                            </scg:List>
+                          </uix:NSelectItem.Items>
+                          <uix:NSelectItem.Target>
+                            <uix:TargetAnchorable CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="26, 208, 30, 12" CvTextArgument="&lt;Al&gt;&gt;" CvType="Text" DesignTimeRectangle="23, 203, 300, 22" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypeGroupsComboBox' role='combo box' /&gt;" Guid="b2188f54-c757-4367-9aa9-82d643f3e9db" InformativeScreenshot="6c4f936ba59c2ed3df7f9820a2a92865.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="39, 182, 181, 16" CvTextArgument="Document Types and Groups" CvType="Text" DesignTimeRectangle="40, 179, 262, 19" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl name='Document Types and Groups' role='text' automationid='' check:text='Document Types and Groups' /&gt;" Guid="54d503bb-c5e2-4755-81e5-f732e0bdd36f" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NSelectItem.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NSelectItem>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[New SystemException(&quot;Unable to Navigate Document Retrieval page&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="8, 143, 330, 905" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' role='grouping' check:text='Document Retrieval' /&gt;" Guid="06f313f2-c59c-4658-8ea9-67f96f5c6399" ImageBase64="" InformativeScreenshot="4b6cf130ab581b47d17cf834f6e43012.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="26bc1272-2363-49f1-8009-1d23c0496cf1" CvTextArea="33, 150, 125, 13" CvTextArgument="Document Retrieval" CvType="Text" DesignTimeRectangle="34, 147, 299, 19" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl name='Document Retrieval' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl name='Document Retrieval' role='text' automationid='' check:text='Document Retrieval' /&gt;" Guid="f85a012c-b2f6-4877-85f9-068655423005" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NSelectItem DisplayName="Select Item 'list Document Type'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="AP - Invoices" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="1">
+                  <x:String>AP - Invoices</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable CVScreenId="a8ee0ad5-2bad-4119-b07b-cb8d1ed69083" CvTextArea="46, 232, 71, 12" CvTextArgument="AP - Invoices" CvType="Text" DesignTimeRectangle="23, 228, 303, 191" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='documentTypeGroupsExpander' /&gt;&lt;ctrl automationid='docTypesListBox' role='list' /&gt;" Guid="4d0e97e8-8037-449d-bb75-2ad9f1fe481b" InformativeScreenshot="30b77c8b16661d7488ecfb452731189a.png" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NCheckState DisplayName="Check App State 'SAP Document'" sap:VirtualizedContainerService.HintSize="954,524.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="217d2466-4f92-4b4a-909b-208953ae3eda" Timeout="30" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,263.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;bot succesful navigated &amp; selected 'AP - Invoices'&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,208" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New SystemException(&quot;bot not able to select 'AP - Invoices'&quot;)]" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable CVScreenId="8a5c575d-e354-47b7-9b45-86b8f84d2c98" CvElementArea="30, 525, 268, 22" CvType="InputBox" DesignTimeRectangle="31, 526, 266, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='keywordsAndDateRangeExpander' /&gt;&lt;ctrl automationid='SAPDocument#TextBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='keywordsAndDateRangeExpander' /&gt;&lt;ctrl automationid='SAPDocument#TextBox' role='editable text' /&gt;" Guid="b351351a-fd03-4316-9cf5-a85317ef09c9" InformativeScreenshot="b2765ee03ba7c33fa25690b41a50d54f.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase (Unity Client 64 (PROD))' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="8a5c575d-e354-47b7-9b45-86b8f84d2c98" CvTextArea="31, 512, 92, 12" CvTextArgument="SAP Document #" CvType="Text" DesignTimeRectangle="32, 511, 238, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='keywordsAndDateRangeExpander' /&gt;&lt;ctrl automationid='SAPDocument#TextBlock' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='retrievalPart' /&gt;&lt;ctrl automationid='keywordsAndDateRangeExpander' /&gt;&lt;ctrl automationid='SAPDocument#TextBlock' role='text' check:text='SAP Document #KeywordName' /&gt;" Guid="5cf11c40-9790-41da-ad4a-f6ab5e419446" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" FilePath="[in_Config(&quot;HylandUnity_Location&quot;).ToString]" IconBase64="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" InformativeScreenshot="ba67093d27510339772f3d34d3b159d9.png" Selector="&lt;wnd app='obunity.exe' cls='HwndWrapper*' title='OnBase*' /&gt;" Title="OnBase (Unity Client 64 (PROD))" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
