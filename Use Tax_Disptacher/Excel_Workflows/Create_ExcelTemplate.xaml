@@ -48,6 +48,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,9 +124,10 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Creates a excel template for current month  by taking previous month file as refernece and clears off all the data from required sheets." DisplayName="Create_ExcelTemplate" sap:VirtualizedContainerService.HintSize="608,2543.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Creates a excel template for current month  by taking previous month file as refernece and clears off all the data from required sheets." DisplayName="Create_ExcelTemplate" sap:VirtualizedContainerService.HintSize="1263,2255" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Str_PreviousMonthFile" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="List_Sheets" />
@@ -136,35 +138,35 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Searching for previous month excel template&quot;]" />
-    <Assign DisplayName="Assign - Previous month File" sap:VirtualizedContainerService.HintSize="546,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Searching for previous month excel template&quot;]" />
+    <Assign DisplayName="Assign - Previous month File" sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Str_PreviousMonthFile]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Directory.GetFiles(in_Config("ExcelTemplatePath").ToString, "*"+now.AddMonths(-2).ToString("MMMM")+"*"+now.AddYears(0).ToString("yyyy")+"*.xlsx").FirstOrDefault()]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Directory.GetFiles(in_Config("ExcelTemplatePath").ToString, "*"+now.AddMonths(-2).ToString("MMMM*yyyy")+"*.xlsx").FirstOrDefault()]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[string.IsNullOrEmpty(Str_PreviousMonthFile)]" sap:VirtualizedContainerService.HintSize="546,472.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[string.IsNullOrEmpty(Str_PreviousMonthFile)]" sap:VirtualizedContainerService.HintSize="518,424" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Str_PreviousMonthFile]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[Directory.GetFiles(in_Config("ExcelTemplatePath").ToString, "*"+now.AddMonths(-2).ToString("MMM")+"*"+now.AddYears(0).ToString("yyyy")+"*.xlsx").FirstOrDefault()]</InArgument>
+              <InArgument x:TypeArguments="x:String">[Directory.GetFiles(in_Config("ExcelTemplatePath").ToString, "*"+now.AddMonths(-2).ToString("MMM*yyyy")+"*.xlsx").FirstOrDefault()]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,15 +175,15 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[String.IsNullOrEmpty(Str_PreviousMonthFile)]" sap:VirtualizedContainerService.HintSize="546,1643.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[String.IsNullOrEmpty(Str_PreviousMonthFile)]" sap:VirtualizedContainerService.HintSize="518,1490" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,288.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,230" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message- 2" sap:VirtualizedContainerService.HintSize="354,86" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Previous month excel template not found&quot;]">
+          <ui:LogMessage DisplayName="Log Message- 2" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Previous month excel template not found&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,11 +191,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Throw Exception="[new Exception(&quot;Previous month excel template not found. Hence cannot proceed with further flow&quot;)]" sap:VirtualizedContainerService.HintSize="354,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[new Exception(&quot;Previous month excel template not found. Hence cannot proceed with further flow&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,1192" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,1099" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="Str_CurrentMonthFile" />
             <Variable x:TypeArguments="x:Boolean" Name="CurrentMonthFileExists" />
@@ -203,7 +205,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message- 3" sap:VirtualizedContainerService.HintSize="450,86" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Previous month excel template found. Creatingexcel template for current month&quot;]">
+          <ui:LogMessage DisplayName="Log Message- 3" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Previous month excel template found. Creatingexcel template for current month&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -211,7 +213,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign DisplayName="Assign - Currentonth File" sap:VirtualizedContainerService.HintSize="450,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign DisplayName="Assign - Currentonth File" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Str_CurrentMonthFile]</OutArgument>
             </Assign.To>
@@ -225,7 +227,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process - Excel Process" sap:VirtualizedContainerService.HintSize="450,86" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel">
+          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process - Excel Process" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -233,7 +235,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:KillProcess>
-          <ui:FileExistsX DisplayName="File Exists" Exists="[CurrentMonthFileExists]" sap:VirtualizedContainerService.HintSize="450,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_Config(&quot;ExcelTemplatePath&quot;).ToString+Str_CurrentMonthFile]" />
+          <ui:FileExistsX DisplayName="File Exists" Exists="[CurrentMonthFileExists]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_Config(&quot;ExcelTemplatePath&quot;).ToString+Str_CurrentMonthFile]" />
           <If Condition="[CurrentMonthFileExists]" sap:VirtualizedContainerService.HintSize="450,598" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,341.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
