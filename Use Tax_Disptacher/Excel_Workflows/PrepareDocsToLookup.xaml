@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2360.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2507.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PrepareDocsToLookup_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +118,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PrepareDocsToLookup" sap:VirtualizedContainerService.HintSize="554,2296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PrepareDocsToLookup" sap:VirtualizedContainerService.HintSize="520,2442.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_SE16N" />
     </Sequence.Variables>
@@ -127,11 +127,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="492,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Export file and adding required columns&quot;]" />
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="492,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
-    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="492,124" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_SE16N]" DisplayName="Read Export File" sap:VirtualizedContainerService.HintSize="492,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_Config(&quot;DownloadedSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;DownloadPath&quot;).ToString+now.ToString(&quot;MMM&quot;)+&quot;\&quot;+in_Config(&quot;SQ01FileName&quot;).ToString]" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Cost Center" DataTable="[dt_SE16N]" DisplayName="Add Data Column - Costcentre" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="458,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Export file and adding required columns&quot;]" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="458,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
+    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="458,124" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_SE16N]" DisplayName="Read Export File" sap:VirtualizedContainerService.HintSize="458,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_Config(&quot;DownloadedSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;DownloadPath&quot;).ToString+now.ToString(&quot;MMM&quot;)+&quot;\&quot;+in_Config(&quot;SQ01FileName&quot;).ToString]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Cost Center" DataTable="[dt_SE16N]" DisplayName="Add Data Column - Costcentre" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -139,7 +139,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Amount in local currency" DataTable="[dt_SE16N]" DisplayName="Add Data Column - Amount in local currency" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Amount in local currency" DataTable="[dt_SE16N]" DisplayName="Add Data Column - Amount in local currency" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -147,8 +147,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="492,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Applying lookup to get cost centre and currency fields&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_SE16N]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="458,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Applying lookup to get cost centre and currency fields&quot;]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_SE16N]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -197,8 +197,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_SE16N]" DisplayName="Write Range Workbook SE16N" sap:VirtualizedContainerService.HintSize="492,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;OutputSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;Invoice FolderPath&quot;).ToString+&quot;\&quot;+in_Config(&quot;FBL3NFileName&quot;).ToString]" />
-    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Excel Process" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel">
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_SE16N]" DisplayName="Write Range Workbook SE16N" sap:VirtualizedContainerService.HintSize="458,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;OutputSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;Invoice FolderPath&quot;).ToString+&quot;\&quot;+in_Config(&quot;FBL3NFileName&quot;).ToString]" />
+    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill Excel Process" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -206,7 +206,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:KillProcess>
-    <ui:RetryScope DisplayName="Retry Change in column format" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+    <ui:RetryScope DisplayName="Retry Change in column format" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="RetryScope_2">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,164.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -277,7 +277,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each Column" sap:VirtualizedContainerService.HintSize="492,57.333333333333336" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dt_SE16N.Clone().Columns]">
+    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each Column" sap:VirtualizedContainerService.HintSize="458,86" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dt_SE16N.Clone().Columns]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataColumn">
           <ActivityAction.Argument>
@@ -307,17 +307,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="492,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Uploading items into the queue&quot;]" />
-    <ui:RetryScope sap2010:Annotation.AnnotationText="Adding items into the queue. Placed the orchestrator related activities as a part of best practice.&#xA;" DisplayName="Retry adding items into the queue" sap:VirtualizedContainerService.HintSize="492,628.6666666666666" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="458,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Uploading items into the queue&quot;]" />
+    <ui:RetryScope sap2010:Annotation.AnnotationText="Adding items into the queue. Placed the orchestrator related activities as a part of best practice.&#xA;" DisplayName="Retry adding items into the queue" sap:VirtualizedContainerService.HintSize="458,580.6666666666666" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,308" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,308" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BulkAddQueueItems TimeoutMS="{x:Null}" ContinueOnError="False" DisplayName="Bulk Add Queue Items" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_1" QueueItemsDataTable="[dt_SE16N]" QueueName="UseTax">
+            <ui:BulkAddQueueItems TimeoutMS="{x:Null}" ContinueOnError="False" DisplayName="Bulk Add Queue Items" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="354,220" sap2010:WorkflowViewState.IdRef="BulkAddQueueItems_1" QueueItemsDataTable="[dt_SE16N]" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -339,6 +339,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="492,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Queue items uploaded: &quot;+dt_SE16N.RowCount.ToString]" />
+    <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="458,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Queue items uploaded: &quot;+dt_SE16N.RowCount.ToString]" />
   </Sequence>
 </Activity>

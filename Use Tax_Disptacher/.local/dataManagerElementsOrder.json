@@ -170,6 +170,7 @@
       "Path": "Excel_Workflows/Create_ExcelTemplate.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "CurrentMonthFileExists&Sequence_3",
         "Str_PreviousMonthFile&Sequence_1",
         "List_Sheets&Sequence_1",
         "Str_CurrentMonthFile&Sequence_3",
@@ -212,6 +213,22 @@
         "Filepath&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

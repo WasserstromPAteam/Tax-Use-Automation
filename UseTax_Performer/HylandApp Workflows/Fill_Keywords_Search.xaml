@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,8386.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883,8375</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Fill_Keywords_Search_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="There is businnes logic to search the documents in the application. Firstly, search with the Docnumber, if not found search with costcentre, If not found and currency, if found download the doc. If multiple docs found update the same in the remarks&#xA;" DisplayName="Fill_Keywords_Search" sap:VirtualizedContainerService.HintSize="820,8322" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="There is businnes logic to search the documents in the application. Firstly, search with the Docnumber, if not found search with costcentre, If not found and currency, if found download the doc. If multiple docs found update the same in the remarks&#xA;" DisplayName="Fill_Keywords_Search" sap:VirtualizedContainerService.HintSize="820,8310" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_NoDocumentPopup" />
       <Variable x:TypeArguments="x:String" Name="str_SearchReults" />
@@ -128,13 +128,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: OnBase (Unity Client 64 (PROD))" sap:VirtualizedContainerService.HintSize="758,8172" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: OnBase (Unity Client 64 (PROD))" sap:VirtualizedContainerService.HintSize="758,8165" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dd62a343-b958-49ee-b612-cd7e265e7012" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="724,7852" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="724,7851" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
